@@ -7,5 +7,5 @@ Material For Supplemental Instruction for CS12J (Introduction to Programming Con
 # [Live Meeting](https://carter.page.link/zoom)
 
 ## Spring of 2020 Recordings
-[Recording from Session #10](https://youtu.be/0Nwrni2hZlo)
+[Recording from Session #10](https://youtu.be/0Nwrni2hZlo)  
 [Recording from Session #11](https://youtu.be/8eH97MXAkqQ)
