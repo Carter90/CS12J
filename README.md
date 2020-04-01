@@ -143,3 +143,76 @@ class Pokemon{
 	private int hp, attack, speed;
 } //end class
 ```
+## Bank / BankAccount Classes
+```Java
+public class BankAccount {
+	String name;
+	int account_num;
+	double balance;
+	BankAccount(){
+		name = "None";
+		account_num = -1;
+		balance = 0.0;
+	} //end BankAccount constructor
+	
+	BankAccount(String new_name, int new_account, double new_balance){
+		name = new_name;
+                account_num = new_account;
+                balance = new_balance;
+        } //end of overloaded BankAccount constructor
+	int get_account_num(){return(account_num);}
+	double get_balance(){return(balance);}
+
+	void set_account_num(int new_account_num){
+		if(new_account_num < 0){
+			account_num = -1; 
+			return;
+		} // end if negative
+		account_num = new_account_num;
+	} // end of set_account_num
+
+	boolean withdraw(double amount){
+		if(balance >= amount){
+			balance -= amount;
+			return(true);
+		} //end if suffecent funds
+		return(false);
+	} // end withdraw
+
+	void deposit(double amount){
+		if(amount > 0){
+			balance += amount;
+		} // if positive deposit
+	} //end deposit
+
+} //end class BankAccount
+
+public class Bank {
+	private int cap_accounts = 10;
+	private int open_accounts = 0;
+	private BankAccount[] accounts = new BankAccount[cap_accounts];
+	Bank(){
+		open_accounts = 0;
+	} //end Bank construtor
+
+	int open_bank_account(){
+		if(open_accounts == cap_accounts){
+			return(-1);} //Might also throw an expetion
+		// @TODO: collect user input
+		accounts[open_accounts++]= new BankAccount();
+		return(accounts[open_accounts-1].get_account_num());
+	} // end open_bank_account
+
+	BankAccount get_bank_account(int account_num){
+		for(int i =0; i < open_accounts; i++){
+			if(accounts[i].get_account_num() == account_num){
+				return(accounts[i]);
+			} //if found account 
+		} //end for
+	// we should throw an expection if we are here
+	return(new BankAccount());
+ } //end get_bank_account
+} //end class Bank
+
+
+```
