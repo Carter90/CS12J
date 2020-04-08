@@ -216,3 +216,60 @@ public class Bank {
 
 
 ```
+
+## Size/Item Classes Inheritance using extends
+```Java
+public class Size {
+        private double width;
+        private double length;
+        private double height;
+
+        public Size(){
+                this.width = 0;
+                this.length = 0;
+                this.height = 0;
+        } //end of defalt Size constructor
+
+        public Size(double nwidth, double nlength, double nheight){
+                this.width = nwidth;
+                this.length = nlength;
+                this.height = nheight;
+        } //end of overloaded Size constructor
+
+        double getWidth(){return(width);}
+        double getLength(){return(length);}
+        double getHeight(){return(height);}
+
+        void setWidth(double nwidth){this.width = nwidth;}
+        void setLength(double nlength){this.length = nlength;}
+        void setHeight(double nheight){this.height = nheight;}
+        
+} //end class Size
+public class Item extends Size{
+        String material;
+        double weight;
+
+        public Item(){
+                this.material ="None";
+                this.weight = 0;
+                setWidth(0);
+                setLength(0);
+                setHeight(0);
+         } //end default constructor
+
+        public Item(String nmaterial, double nweight, double nwidth, double nlength, double nheight){
+                this.material = nmaterial;
+                this.weight = nweight;
+                setWidth(nwidth);
+                setLength(nlength);
+                setHeight(nheight);
+         } //end constructor
+
+        String getMaterial(){return(material);};
+        double getWeight(){return(weight);};
+
+        void setMaterial(String nmaterial){this.material = nmaterial;}
+        void setWeight(double nweight){this.weight = nweight;}
+} //end class Item
+
+```
