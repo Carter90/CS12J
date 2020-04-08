@@ -217,6 +217,14 @@ public class Bank {
 
 ```
 
+
+## Direction Enum
+```Java
+public enum Direction { NORTH, SOUTH, EAST, WEST }
+Direction direction
+direction = Direction.NORTH
+```
+
 ## Size/Item Classes Inheritance using extends
 ```Java
 public class Size {
