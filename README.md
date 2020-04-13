@@ -91,7 +91,7 @@ public class Args {
 
 ## Pokemon
 ```Java
-class Pokemon{
+public class Pokemon{
 		public Pokemon(){
 			name = "None";
 			hp = -9;
@@ -145,24 +145,24 @@ class Pokemon{
 ## Bank / BankAccount Classes
 ```Java
 public class BankAccount {
-	String name;
-	int account_num;
-	double balance;
-	BankAccount(){
+	private String name;
+	private int account_num;
+	private double balance;
+	public BankAccount(){
 		name = "None";
 		account_num = -1;
 		balance = 0.0;
 	} //end BankAccount constructor
 	
-	BankAccount(String new_name, int new_account, double new_balance){
+	public BankAccount(String new_name, int new_account, double new_balance){
 		name = new_name;
                 account_num = new_account;
                 balance = new_balance;
         } //end of overloaded BankAccount constructor
-	int get_account_num(){return(account_num);}
-	double get_balance(){return(balance);}
+	public int get_account_num(){return(account_num);}
+	public double get_balance(){return(balance);}
 
-	void set_account_num(int new_account_num){
+	public void set_account_num(int new_account_num){
 		if(new_account_num < 0){
 			account_num = -1; 
 			return;
@@ -170,7 +170,7 @@ public class BankAccount {
 		account_num = new_account_num;
 	} // end of set_account_num
 
-	boolean withdraw(double amount){
+	public boolean withdraw(double amount){
 		if(balance >= amount){
 			balance -= amount;
 			return(true);
@@ -178,7 +178,7 @@ public class BankAccount {
 		return(false);
 	} // end withdraw
 
-	void deposit(double amount){
+	public void deposit(double amount){
 		if(amount > 0){
 			balance += amount;
 		} // if positive deposit
@@ -190,11 +190,11 @@ public class Bank {
 	private int cap_accounts = 10;
 	private int open_accounts = 0;
 	private BankAccount[] accounts = new BankAccount[cap_accounts];
-	Bank(){
+	public Bank(){
 		open_accounts = 0;
 	} //end Bank construtor
 
-	int open_bank_account(){
+	public int open_bank_account(){
 		if(open_accounts == cap_accounts){
 			return(-1);} //Might also throw an expetion
 		// @TODO: collect user input
@@ -202,7 +202,7 @@ public class Bank {
 		return(accounts[open_accounts-1].get_account_num());
 	} // end open_bank_account
 
-	BankAccount get_bank_account(int account_num){
+	public BankAccount get_bank_account(int account_num){
 		for(int i =0; i < open_accounts; i++){
 			if(accounts[i].get_account_num() == account_num){
 				return(accounts[i]);
@@ -243,18 +243,18 @@ public class Size {
                 this.height = nheight;
         } //end of overloaded Size constructor
 
-        double getWidth(){return(width);}
-        double getLength(){return(length);}
-        double getHeight(){return(height);}
+        public double getWidth(){return(width);}
+        public double getLength(){return(length);}
+        public double getHeight(){return(height);}
 
-        void setWidth(double nwidth){this.width = nwidth;}
-        void setLength(double nlength){this.length = nlength;}
-        void setHeight(double nheight){this.height = nheight;}
+        public void setWidth(double nwidth){this.width = nwidth;}
+        public void setLength(double nlength){this.length = nlength;}
+        public void setHeight(double nheight){this.height = nheight;}
         
 } //end class Size
 public class Item extends Size{
-        String material;
-        double weight;
+        private String material;
+        private double weight;
 
         public Item(){
                 this.material ="None";
@@ -272,11 +272,11 @@ public class Item extends Size{
                 setHeight(nheight);
          } //end constructor
 
-        String getMaterial(){return(material);};
-        double getWeight(){return(weight);};
+        public String getMaterial(){return(material);};
+        public double getWeight(){return(weight);};
 
-        void setMaterial(String nmaterial){this.material = nmaterial;}
-        void setWeight(double nweight){this.weight = nweight;}
+        public void setMaterial(String nmaterial){this.material = nmaterial;}
+        public void setWeight(double nweight){this.weight = nweight;}
 } //end class Item
 
 ```
