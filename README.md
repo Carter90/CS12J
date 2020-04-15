@@ -280,3 +280,37 @@ public class Item extends Size{
 } //end class Item
 
 ```
+
+
+## Recursion
+```Java
+
+//int num =6; for(int i=num; i >= 0; i--){ System.out.println(i); }
+void countDown(int num){
+if(num < 0){return;}
+System.out.println(num);
+countDown(num - 1);
+} //end countDown
+
+//int num =6; for(int i=0; i<= num; i++){ System.out.println(i); }
+void countUp(int num){ //@NOTE: except num
+if(num < 0){return;}
+countDown(num - 1);
+System.out.println(num);
+} //end countUp
+
+void printBackwards(ArrayList<String> text, int index){
+	if(index < 0){return;}
+	System.out.println(text.get(index));
+	printBackwards(text, index - 1);
+} //end printBackwards
+ArrayList<String> sal = new ArrayList<String>();
+
+sal.add("Greetings")
+sal.add("Human")
+sal.add("test")
+sal.add("this")
+sal.indexOf("yo")
+sal.get(0)
+printBackwards(sal, sal.size()-1)
+```
