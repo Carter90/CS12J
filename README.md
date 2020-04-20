@@ -314,3 +314,49 @@ sal.indexOf("yo")
 sal.get(0)
 printBackwards(sal, sal.size()-1)
 ```
+
+
+
+## Recursion vs Iterative Division
+```Java
+public class DM {
+
+public static void main(String[] args) {
+	System.out.printf("%d == 0\n", divr(1,2));
+        System.out.printf("%d == 1\n", divr(2,2));
+	System.out.printf("%d == 2\n", divr(5,2));
+	System.out.printf("%d == 3\n", divr(6,2));
+	System.out.printf("%d == 5\n", divr(10,2));
+	System.out.printf("%d == 2\n", divl(5,2));
+	divl(5,0);
+} //end main
+
+/**
+* divr - Division recursivly
+* @param int arg0, int arg1
+* @return int result
+*/
+private static int divr(int arg0, int arg1){
+	if(arg1 == 0){throw new ArithmeticException("/ by zero");}
+	if(arg1 > arg0){return(0);}
+	//if(arg1 == arg0){return(1);} //save one recurise
+	return(1 + divr(arg0-arg1, arg1));
+} //end divr method 
+
+/**
+* divl - Division via loop
+* @param int arg0, int arg1
+* @return int result
+*/
+private static int divl(int arg0, int arg1){
+	if(arg1 == 0){throw new ArithmeticException("/ by zero");}
+	int result = 0;
+	while(arg0 >= arg1){
+		result++;
+		arg0 -= arg1; 
+	} //end while loop
+	// right here arg0 is the remainder eqiv to %
+	return(result);
+} // end divl method
+} //end class DM
+```
