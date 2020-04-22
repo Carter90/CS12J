@@ -317,20 +317,8 @@ printBackwards(sal, sal.size()-1)
 
 
 
-## Recursion vs Iterative Division
+## Recursion vs Iterative Division & Multiplication
 ```Java
-public class DM {
-
-public static void main(String[] args) {
-	System.out.printf("%d == 0\n", divr(1,2));
-        System.out.printf("%d == 1\n", divr(2,2));
-	System.out.printf("%d == 2\n", divr(5,2));
-	System.out.printf("%d == 3\n", divr(6,2));
-	System.out.printf("%d == 5\n", divr(10,2));
-	System.out.printf("%d == 2\n", divl(5,2));
-	divl(5,0);
-} //end main
-
 /**
 * divr - Division recursivly
 * @param int arg0, int arg1
@@ -358,5 +346,26 @@ private static int divl(int arg0, int arg1){
 	// right here arg0 is the remainder eqiv to %
 	return(result);
 } // end divl method
-} //end class DM
+
+/**
+* mulir - Multiplication recursivly
+* @param int arg0, int arg1
+* @return int result
+*/
+private static int multir(int arg0, int arg1){
+        if(arg1 <= 0){return(0);}
+        return(arg0 + multir(arg0, arg1-1));
+} //end mutir method 
+
+/**
+* multil - Multiplication via loop
+* @param int arg0, int arg1
+* @return int result
+*/
+private static int multil(int arg0, int arg1){
+        int result = 0;
+	for(;arg1 >= 1; arg1--){result +=arg0;}
+	//for(int i =0; i< arg1; i++){ result +=arg0; }
+        return(result);
+} // end multil method
 ```
