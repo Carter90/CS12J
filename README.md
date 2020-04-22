@@ -369,3 +369,47 @@ private static int multil(int arg0, int arg1){
         return(result);
 } // end multil method
 ```
+
+## Shape Interfaces & Composition
+```Java
+interface Shape {
+	public String toString();
+	public void print();
+} //end Shape interface
+
+
+public class Point implements Shape {
+	double x, y; 
+	public Point(){ x=0; y=0; }
+	public Point(double newx, double newy){ x=newx; y=newy; }
+	public String toString(){ return("x:" + Double.toString(x) + ", y:" + Double.toString(y) );}
+	public void print(){System.out.println(toString());}
+} //end class Point
+
+
+public class Line implements Shape {
+	Point p1, p2; 
+	public Line(){ p1 = new Point(); p2= new Point(); }
+	public Line(Point np1, Point np2){ p1 = np1; p2 = np2; }
+	// overloaded
+	public double getLength(){ return(1); } //TODO: do the math lazy pants
+	public String toString(){ return("p1:"+ p1.toString() + 
+					 ", p2:" + p2.toString() + 
+					 ",Length:"+Double.toString(getLength()));}
+        public void print(){System.out.println(toString());}
+} //end Line class
+
+
+public class Circle implements Shape {
+	Point center;
+	Line radius;
+	public Circle(){center = new Point(); radius = new Line();}
+	public Circle(double centerX, double centerY, double edgeX, double edgeY){
+		center = new Point(centerX,centerY);
+		radius = new Line(center, new Point(edgeX,edgeY));
+	}
+	public String toString(){ return("centered at:"+ center.toString() + 
+                                         ",radius of:"+ Double.toString(radius.getLength()));}
+        public void print(){System.out.println(toString());}
+} //end Circle class
+```
