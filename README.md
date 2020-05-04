@@ -413,3 +413,33 @@ public class Circle implements Shape {
         public void print(){System.out.println(toString());}
 } //end Circle class
 ```
+
+
+## Incomplete Game Pieces 
+```Java
+public enum Direction { NORTH, SOUTH, EAST, WEST }
+public class Location{;}
+
+interface Item {
+	public String toString();
+	public void print();
+	boolean place(Location l);
+	boolean move(Location l);
+	boolean rotate(Direction d);
+	boolean flip();
+	boolean add();
+	boolean remove();
+	boolean onBoard;
+} //end Item interface
+
+public class Dice implements Item{
+    boolean add(){
+	    if(onBoard){return(false)};
+	    onBoard=true;
+	} //end add
+	boolean remove(){
+	    if(!onBoard){return(false)};
+	    onBoard=false;
+	} //end remove
+} //end 
+```
