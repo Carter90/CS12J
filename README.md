@@ -429,16 +429,16 @@ interface Item {
 	boolean flip();
 	boolean add();
 	boolean remove();
-	boolean onBoard;
+	boolean onBoard = false;
 } //end Item interface
 
 public class Dice implements Item{
     boolean add(){
-	    if(onBoard){return(false)};
+	    if(onBoard){return(false);}
 	    onBoard=true;
 	} //end add
 	boolean remove(){
-	    if(!onBoard){return(false)};
+	    if(!onBoard){return(false);}
 	    onBoard=false;
 	} //end remove
 } //end 
