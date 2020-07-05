@@ -3,9 +3,6 @@ Material For Supplemental Instruction for CS12J (Introduction to Programming Con
 
 ## [All Slides](https://drive.google.com/drive/folders/1XgwLqsDrXuAsVudMv9tlvET-yUtsR6Kt?usp=sharing)
 
-
-# [Live Meeting](https://carter.page.link/zoom)
-
 ## Spring of 2020 Recordings
 [Recordings](https://www.youtube.com/playlist?list=PLx97YYNRB4zQ98qMMXT19ZM00qu1Kb4Vi)  
 
